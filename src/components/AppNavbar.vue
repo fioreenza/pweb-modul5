@@ -8,8 +8,8 @@
 
       <!-- Menu items for desktop -->
       <div class="hidden font-bold text-[#fffbeb] md:flex text-xl space-x-6">
-        <router-link to="/"  class="hover:text-[#061547] hover:bg-[#fffbeb] px-4 rounded-2xl py-1 block lg:inline-block">Home</router-link>
-        <router-link to="/about"  class="hover:text-[#061547] hover:bg-[#fffbeb] px-4 rounded-2xl py-1 block lg:inline-block">About</router-link>
+        <router-link to="/" class="hover:text-[#fffbeb]">Catalog</router-link>
+        <router-link to="/addbook" class="hover:text-[#fffbeb]">Add Book</router-link>
       </div>
 
       <!-- Hamburger icon for mobile -->
@@ -29,8 +29,8 @@
       <!-- Slide-in menu from the right -->
       <div class="absolute right-0 top-0 bg-[#061547] text-[#fffbeb] font-bold text-xl w-64 h-full transition-transform duration-300 transform" 
            :class="{ 'translate-x-0': isMenuOpen, '-translate-x-full': !isMenuOpen }">
-        <router-link to="/" class="block px-4 py-2 hover:text-[#061547] hover:bg-[#fffbeb]" @click="toggleMenu">Home</router-link>
-        <router-link to="/about" class="block px-4 py-2 hover:text-[#061547] hover:bg-[#fffbeb]" @click="toggleMenu">About</router-link>
+           <router-link to="/" class="block px-4 py-2 hover:text-[#061547] hover:bg-[#fffbeb]" @click="toggleMenu">Catalog</router-link>
+        <router-link to="/addbook" class="block px-4 py-2 hover:text-[#061547] hover:bg-[#fffbeb]" @click="toggleMenu">Add Book</router-link>
       </div>
     </div>
   </nav>

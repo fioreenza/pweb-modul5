@@ -29,7 +29,7 @@
             <p class="text-sm">Stock: {{ book.qty }}</p>
             <router-link
               :to="{ name: 'book-detail', params: { id: book._id } }"
-              class="bg-[#061547] text-white px-4 py-2 rounded-md hover:-translate-y-1 transition-all"
+              class="bg-[#061547] text-white text-xs rounded-2xl px-4 py-2 hover:-translate-y-1 transition-all"
             >
               View Detail
             </router-link>
@@ -62,10 +62,11 @@ export default {
 
     onMounted(async () => {
       try {
-        const response = await axios.get('https://pweb-express-mongodb-p19-2024.vercel.app/book');
-        books.value = response.data.data; // Access the `data` field from the response
+        const response = await axios.get('https://pweb-books-api.vercel.app//book');
+        books.value = response.data.data; 
       } catch (error) {
         console.error('Error fetching books:', error);
+        alert('Failed to fetch books.');
       }
     });
 

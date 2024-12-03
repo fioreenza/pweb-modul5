@@ -1,5 +1,8 @@
+import DeleteBook from '@/components/DeleteBook.vue'
+import CatalogView from '@/views/CatalogView.vue'
+import CreateView from '@/views/CreateView.vue'
+import DetailView from '@/views/DetailView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import BookCatalog from '@/components/BookCatalog.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,14 +10,30 @@ const router = createRouter({
     {
       path: '/',
       name: 'books',
-      component: BookCatalog,
+      component: CatalogView,
     },
     {
       path: '/:id',
       name: 'book-detail',
-      component: () => import('@/components/BookDetail.vue'),
+      component: DetailView,
       props: true,
-    }
+    },
+    {
+      path: '/addbook',
+      name: 'add-book',
+      component: CreateView,
+    },
+    {
+      path: '/deletebook/:id',
+      name: 'delete-book',
+      component: DeleteBook,
+      props: true,
+    },
+    // route not found handler
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: { name: 'books' },
+    },
   ],
 })
 
